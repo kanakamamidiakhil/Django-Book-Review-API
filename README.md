@@ -40,6 +40,6 @@ A Django-powered RESTful API for managing books, reviews, and recommendations. T
 
 7. Open your web browser and go to `http://127.0.0.1:8000/` in Postman to test the API.
   
-8. Swagger yaml documentation with API description and usage can be found in api_blueprint folder [a relative link](api_blueprint/openapi.yaml).
+8. Swagger yaml documentation with API description and usage can be found [here](api_blueprint/openapi.yaml).
 
-9. Postman collection JSON file can be found in api_blueprint folder [a relative link](api_blueprint/Books-management-system-backend.postman_collection.json).
+9. Postman collection JSON file can be found [here](api_blueprint/Books-management-system-backend.postman_collection.json).
