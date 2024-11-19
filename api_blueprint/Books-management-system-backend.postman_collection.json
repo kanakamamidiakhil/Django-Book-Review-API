@@ -1,0 +1,1815 @@
+{
+	"info": {
+		"_postman_id": "4d812153-bda3-4516-b83d-3695c8063dec",
+		"name": "Books management system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22363021"
+	},
+	"item": [
+		{
+			"name": "Register user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"newuser3\", \"password\": \"newpassword\", \"email\": \"newuser3@example.com\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/users/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users",
+						"register"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://127.0.0.1:8000/api/users/register/ \\\n-H \"Content-Type: application/json\" \\\n-d '{\"username\": \"newuser\", \"password\": \"newpassword\", \"email\": \"newuser@example.com\"}'"
+			},
+			"response": [
+				{
+					"name": "http://127.0.0.1:8000/api/users/register/",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\": \"newuser3\", \"password\": \"newpassword\", \"email\": \"newuser3@example.com\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/users/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 19 Nov 2024 07:42:31 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.13.0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "18"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": \"true\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Login user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"newuser2\", \"password\": \"newpassword\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/users/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://127.0.0.1:8000/api/users/login/ \\\n-H \"Content-Type: application/json\" \\\n-d '{\"username\": \"yourusername\", \"password\": \"yourpassword\"}'"
+			},
+			"response": [
+				{
+					"name": "Login user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\": \"newuser3\", \"password\": \"newpassword\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/users/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 19 Nov 2024 11:41:30 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.13.0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "531"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": \"true\",\n    \"data\": {\n        \"username\": \"newuser3\",\n        \"access\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMyMDE2NzkwLCJpYXQiOjE3MzIwMTY0OTAsImp0aSI6ImFjM2M4MjQxMTBkNjRlYjM5OGI2N2Q5Y2I0NDJjMWU2IiwidXNlcl9pZCI6M30.FpyALOpgBXqByCrX81nnfrJlJVgX9V3eB5hmaA5T4Ww\",\n        \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTczMjEwMjg5MCwiaWF0IjoxNzMyMDE2NDkwLCJqdGkiOiJjMjc4NTg0YmE0YTE0OGI2YTU3MTQzYjQ0YTgwYTM2MSIsInVzZXJfaWQiOjN9.H8lJnPZr8eU1U0TB-iQw5HNowGXaIUnHMWnxPFYyi4U\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Add book",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "admin-key",
+						"value": "key123",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Book Title\",\n    \"author\": \"Author Name\",\n    \"ISBN\": \"1234567890132\",\n    \"genre\": \"fiction\",\n    \"cover_image_url\": \"http://example.com/image.jpg\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/books/add",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"books",
+						"add"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://127.0.0.1:8000/api/books/add/ \\\n-H \"Content-Type: application/json\" \\\n-d '{\"title\": \"Book Title\", \"author\": \"Author Name\", \"ISBN\": \"1234567890123\", \"genre\": \"Genre\", \"cover_image_url\": \"http://example.com/image.jpg\"}'"
+			},
+			"response": [
+				{
+					"name": "Add book",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "admin-key",
+								"value": "key123",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Book Title\",\n    \"author\": \"Author Name\",\n    \"ISBN\": \"1234567890132\",\n    \"genre\": \"fiction\",\n    \"cover_image_url\": \"http://example.com/image.jpg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/books/add",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"books",
+								"add"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 19 Nov 2024 11:19:08 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.13.0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "18"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": \"true\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update book",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "admin-key",
+						"value": "key123",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Updated Title\",\n    \"author\": \"Updated Author\",\n    \"ISBN\": \"123456789\",\n    \"genre\": \"Updated Genre\",\n    \"cover_image_url\": \"http://example.com/updated_image.jpg\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/books/update/<book_id>",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"books",
+						"update",
+						"<book_id>"
+					]
+				},
+				"description": "Generated from cURL: curl -X PUT http://127.0.0.1:8000/api/books/update/1/ \\\n-H \"Content-Type: application/json\" \\\n-d '{\"title\": \"Updated Title\", \"author\": \"Updated Author\", \"ISBN\": \"1234567890123\", \"genre\": \"Updated Genre\", \"cover_image_url\": \"http://example.com/updated_imag"
+			},
+			"response": [
+				{
+					"name": "Update book",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "admin-key",
+								"value": "key123",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Updated Title\",\n    \"author\": \"Updated Author\",\n    \"ISBN\": \"123456789\",\n    \"genre\": \"Updated Genre\",\n    \"cover_image_url\": \"http://example.com/updated_image.jpg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/books/update/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"books",
+								"update",
+								"2"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 18 Nov 2024 21:18:39 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.13.0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "PUT, PATCH, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "18"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": \"true\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Search book by title",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "page-no",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "page-size",
+						"value": "3",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/books/search?sort_by=created_at&genre=fiction&title=ABook Title5",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"books",
+						"search"
+					],
+					"query": [
+						{
+							"key": "author",
+							"value": "Author Name",
+							"disabled": true
+						},
+						{
+							"key": "ISBN",
+							"value": "1234567890127",
+							"disabled": true
+						},
+						{
+							"key": "sort_by",
+							"value": "created_at"
+						},
+						{
+							"key": "genre",
+							"value": "fiction"
+						},
+						{
+							"key": "title",
+							"value": "ABook Title5"
+						}
+					]
+				},
+				"description": "Generated from cURL: curl -X GET \"http://127.0.0.1:8000/api/books/search/?title=Book%20Title\""
+			},
+			"response": [
+				{
+					"name": "Search book by title",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "page-no",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "page-size",
+								"value": "3",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/books/search?sort_by=created_at&genre=fiction&title=ABook Title5",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"books",
+								"search"
+							],
+							"query": [
+								{
+									"key": "author",
+									"value": "Author Name",
+									"disabled": true
+								},
+								{
+									"key": "ISBN",
+									"value": "1234567890127",
+									"disabled": true
+								},
+								{
+									"key": "sort_by",
+									"value": "created_at"
+								},
+								{
+									"key": "genre",
+									"value": "fiction"
+								},
+								{
+									"key": "title",
+									"value": "ABook Title5"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 19 Nov 2024 12:07:38 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.13.0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "234"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": \"true\",\n    \"data\": [\n        {\n            \"book_id\": 6,\n            \"title\": \"ABook Title5\",\n            \"author\": \"Author Name\",\n            \"ISBN\": \"1234567890132\",\n            \"created_at\": \"2024-11-19T11:19:08.617247Z\",\n            \"genre\": \"fiction\",\n            \"average_rating\": 0\n        }\n    ],\n    \"total_books\": 1,\n    \"page_no\": 1,\n    \"page_size\": 3\n}"
+				}
+			]
+		},
+		{
+			"name": "Search book by Author",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "page-no",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "page-size",
+						"value": "3",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/books/search?sort_by=created_at&genre=fiction&author=Author Name",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"books",
+						"search"
+					],
+					"query": [
+						{
+							"key": "author",
+							"value": "Author Name",
+							"disabled": true
+						},
+						{
+							"key": "ISBN",
+							"value": "1234567890127",
+							"disabled": true
+						},
+						{
+							"key": "sort_by",
+							"value": "created_at"
+						},
+						{
+							"key": "genre",
+							"value": "fiction"
+						},
+						{
+							"key": "author",
+							"value": "Author Name"
+						}
+					]
+				},
+				"description": "Generated from cURL: curl -X GET \"http://127.0.0.1:8000/api/books/search/?title=Book%20Title\""
+			},
+			"response": [
+				{
+					"name": "Search book by author",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "page-no",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "page-size",
+								"value": "3",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/books/search?author=Author Name&sort_by=created_at&genre=fiction",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"books",
+								"search"
+							],
+							"query": [
+								{
+									"key": "author",
+									"value": "Author Name"
+								},
+								{
+									"key": "ISBN",
+									"value": "1234567890127",
+									"disabled": true
+								},
+								{
+									"key": "sort_by",
+									"value": "created_at"
+								},
+								{
+									"key": "genre",
+									"value": "fiction"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 19 Nov 2024 12:09:06 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.13.0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "398"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": \"true\",\n    \"data\": [\n        {\n            \"book_id\": 6,\n            \"title\": \"ABook Title5\",\n            \"author\": \"Author Name\",\n            \"ISBN\": \"1234567890132\",\n            \"created_at\": \"2024-11-19T11:19:08.617247Z\",\n            \"genre\": \"fiction\",\n            \"average_rating\": 0\n        },\n        {\n            \"book_id\": 5,\n            \"title\": \"Book Title5\",\n            \"author\": \"Author Name\",\n            \"ISBN\": \"1234567890131\",\n            \"created_at\": \"2024-11-19T10:46:04.977056Z\",\n            \"genre\": \"fiction\",\n            \"average_rating\": 0\n        }\n    ],\n    \"total_books\": 2,\n    \"page_no\": 1,\n    \"page_size\": 3\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete book by Id",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "admin-key",
+						"value": "key123",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/books/delete/<book_id>",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"books",
+						"delete",
+						"<book_id>"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Generated from cURL: curl -X DELETE http://127.0.0.1:8000/api/books/delete/1/"
+			},
+			"response": [
+				{
+					"name": "Delete book by Id",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "admin-key",
+								"value": "key123",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/books/delete/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"books",
+								"delete",
+								"2"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 18 Nov 2024 21:19:15 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.13.0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "DELETE, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "18"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": \"true\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add review",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer <access-token-from-login-api>"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"book\": 5, \"rating\": 4, \"content\": \"Great book 2!\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/reviews/add",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"reviews",
+						"add"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://127.0.0.1:8000/api/reviews/add/ \\\n-H \"Content-Type: application/json\" \\\n-H \"Authorization: Bearer <access_token>\" \\\n-d '{\"book\": 1, \"rating\": 5, \"content\": \"Great book!\"}'"
+			},
+			"response": [
+				{
+					"name": "Add review",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMyMDE2NzkwLCJpYXQiOjE3MzIwMTY0OTAsImp0aSI6ImFjM2M4MjQxMTBkNjRlYjM5OGI2N2Q5Y2I0NDJjMWU2IiwidXNlcl9pZCI6M30.FpyALOpgBXqByCrX81nnfrJlJVgX9V3eB5hmaA5T4Ww"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"book\": 5, \"rating\": 4, \"content\": \"Great book 2!\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/reviews/add",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"reviews",
+								"add"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 19 Nov 2024 11:45:22 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.13.0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "140"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": \"true\",\n    \"data\": {\n        \"review_id\": 16,\n        \"user\": 3,\n        \"book\": 5,\n        \"rating\": 4,\n        \"content\": \"Great book 2!\",\n        \"created_at\": \"2024-11-19T11:45:22.283218Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Edit review",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer <access-token-from-login-api>"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"rating\": 2,\n    \"content\": \"Updated review content\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/reviews/update/<review-id>",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"reviews",
+						"update",
+						"<review-id>"
+					]
+				},
+				"description": "Generated from cURL: curl -X PUT http://127.0.0.1:8000/api/reviews/update/1/ \\\n-H \"Content-Type: application/json\" \\\n-H \"Authorization: Bearer <access_token>\" \\\n-d '{\"rating\": 4, \"content\": \"Updated review content\"}'"
+			},
+			"response": [
+				{
+					"name": "Edit review",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMyMDE2NzkwLCJpYXQiOjE3MzIwMTY0OTAsImp0aSI6ImFjM2M4MjQxMTBkNjRlYjM5OGI2N2Q5Y2I0NDJjMWU2IiwidXNlcl9pZCI6M30.FpyALOpgBXqByCrX81nnfrJlJVgX9V3eB5hmaA5T4Ww"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"rating\": 2,\n    \"content\": \"Updated review content\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/reviews/update/16",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"reviews",
+								"update",
+								"16"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 19 Nov 2024 11:45:56 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.13.0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "PUT, PATCH, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "149"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": \"true\",\n    \"data\": {\n        \"review_id\": 16,\n        \"user\": 3,\n        \"book\": 5,\n        \"rating\": 2,\n        \"content\": \"Updated review content\",\n        \"created_at\": \"2024-11-19T11:45:22.283218Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete review",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer <access-token-from-login-api>"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/reviews/delete/<review_id>",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"reviews",
+						"delete",
+						"<review_id>"
+					]
+				},
+				"description": "Generated from cURL: curl -X DELETE http://127.0.0.1:8000/api/reviews/delete/1/ \\\n-H \"Authorization: Bearer <access_token>\""
+			},
+			"response": [
+				{
+					"name": "Delete review",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMyMDE2NzkwLCJpYXQiOjE3MzIwMTY0OTAsImp0aSI6ImFjM2M4MjQxMTBkNjRlYjM5OGI2N2Q5Y2I0NDJjMWU2IiwidXNlcl9pZCI6M30.FpyALOpgBXqByCrX81nnfrJlJVgX9V3eB5hmaA5T4Ww"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/reviews/delete/16",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"reviews",
+								"delete",
+								"16"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 19 Nov 2024 11:46:10 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.13.0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "DELETE, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "18"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": \"true\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Average rating of book",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer <access_token>",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/reviews/average-rating/<book_id>",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"reviews",
+						"average-rating",
+						"<book_id>"
+					]
+				},
+				"description": "Generated from cURL: curl -X GET http://127.0.0.1:8000/api/reviews/average-rating/1/ \\\n-H \"Authorization: Bearer <access_token>\""
+			},
+			"response": [
+				{
+					"name": "Average rating of book",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <access_token>",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/reviews/average-rating/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"reviews",
+								"average-rating",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 19 Nov 2024 07:48:22 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.13.0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "48"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": \"true\",\n    \"data\": {\n        \"average_rating\": 3.5\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get user review of a specific book",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer <access-token-from-login-api>"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/reviews/user-review/<book_id>",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"reviews",
+						"user-review",
+						"<book_id>"
+					]
+				},
+				"description": "Generated from cURL: curl -X GET \"http://yourdomain.com/user-review/1\" \\\n     -H \"Authorization: Bearer <your_access_token>\""
+			},
+			"response": [
+				{
+					"name": "Get user review of a specific book",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMyMDAyMTgzLCJpYXQiOjE3MzIwMDE4ODMsImp0aSI6Ijg2OGFiYWU1NjMwYzQ0NWViMDE1YjdiM2Y5YzMxZWFmIiwidXNlcl9pZCI6MX0.mIzeunmCvxqBYrXqNTsabDbSoMh0aU0yZxEw1VpopH8"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/reviews/user-review/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"reviews",
+								"user-review",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 19 Nov 2024 07:39:08 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.13.0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "148"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": \"true\",\n    \"data\": {\n        \"review_id\": 2,\n        \"user\": 1,\n        \"book\": 2,\n        \"rating\": 2,\n        \"content\": \"Updated review content\",\n        \"created_at\": \"2024-11-19T07:18:03.551072Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get paginated book reviews",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "page-no",
+						"value": "2"
+					},
+					{
+						"key": "page-size",
+						"value": "1"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/reviews/book-reviews<book_id>",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"reviews",
+						"book-reviews<book_id>"
+					]
+				},
+				"description": "Generated from cURL: curl --location 'http://127.0.0.1:8000/api/reviews/book-reviews/1' \\\n--header 'page_no: 2' \\\n--header 'page_size: 1' \\\n--header 'Cookie: csrftoken=gENNOIVjpWzkt4xFk2PRGHIccAz5qpnl'"
+			},
+			"response": [
+				{
+					"name": "Get paginated book reviews",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "page-no",
+								"value": "2"
+							},
+							{
+								"key": "page-size",
+								"value": "1"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/reviews/book-reviews/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"reviews",
+								"book-reviews",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 19 Nov 2024 10:41:02 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.13.0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "189"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": \"true\",\n    \"data\": [\n        {\n            \"review_id\": 1,\n            \"user_id\": 1,\n            \"book_id\": 1,\n            \"rating\": 3,\n            \"content\": \"Great book!\",\n            \"created_at\": \"2024-11-19T07:17:51.146674Z\"\n        }\n    ],\n    \"total_reviews\": 2,\n    \"page_no\": 2,\n    \"page_size\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "Get top recommendations of books (Paginated)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "page-no",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "page-size",
+						"value": "5",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/books/recommendations",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"books",
+						"recommendations"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get top recommendations of books",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "page-no",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "page-size",
+								"value": "5",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/books/recommendations",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"books",
+								"recommendations"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 19 Nov 2024 11:33:59 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.13.0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "881"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": \"true\",\n    \"data\": [\n        {\n            \"book_id\": 3,\n            \"title\": \"Book Title3\",\n            \"author\": \"Author Name\",\n            \"ISBN\": \"1234567890129\",\n            \"created_at\": \"2024-11-19T09:45:40.710484Z\",\n            \"genre\": \"Genre\",\n            \"average_rating\": 4\n        },\n        {\n            \"book_id\": 1,\n            \"title\": \"Book Title\",\n            \"author\": \"Author Name\",\n            \"ISBN\": \"1234567890127\",\n            \"created_at\": \"2024-11-19T09:45:40.710484Z\",\n            \"genre\": \"Genre\",\n            \"average_rating\": 3.5\n        },\n        {\n            \"book_id\": 4,\n            \"title\": \"Book Title4\",\n            \"author\": \"Author Name\",\n            \"ISBN\": \"1234567890130\",\n            \"created_at\": \"2024-11-19T09:45:40.710484Z\",\n            \"genre\": \"Genre\",\n            \"average_rating\": 2\n        },\n        {\n            \"book_id\": 2,\n            \"title\": \"Book Title2\",\n            \"author\": \"Author Name\",\n            \"ISBN\": \"1234567890128\",\n            \"created_at\": \"2024-11-19T09:45:40.710484Z\",\n            \"genre\": \"Genre\",\n            \"average_rating\": 2\n        },\n        {\n            \"book_id\": 6,\n            \"title\": \"ABook Title5\",\n            \"author\": \"Author Name\",\n            \"ISBN\": \"1234567890132\",\n            \"created_at\": \"2024-11-19T11:19:08.617247Z\",\n            \"genre\": \"fiction\",\n            \"average_rating\": 0\n        }\n    ],\n    \"total_books\": 6,\n    \"page_no\": 1,\n    \"page_size\": 5\n}"
+				}
+			]
+		}
+	]
+}
