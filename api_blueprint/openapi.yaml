@@ -1,0 +1,1347 @@
+openapi: 3.0.3
+info:
+  title: Books management system
+  version: 1.0.0
+  contact: {}
+servers:
+  - url: http://127.0.0.1
+paths:
+  /api/users/register:
+    post:
+      summary: Register user
+      description: >-
+        User can be registered using username password and email id
+      operationId: registerUser
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: newuser3@example.com
+                password:
+                  type: string
+                  example: newpassword
+                username:
+                  type: string
+                  example: newuser3
+            examples:
+              Register user:
+                value:
+                  email: newuser3@example.com
+                  password: newpassword
+                  username: newuser3
+      responses:
+        '201':
+          description: http://127.0.0.1:8000/api/users/register/
+          headers:
+            Allow:
+              schema:
+                type: string
+                example: POST, OPTIONS
+            Content-Length:
+              schema:
+                type: string
+                example: '18'
+            Cross-Origin-Opener-Policy:
+              schema:
+                type: string
+                example: same-origin
+            Date:
+              schema:
+                type: string
+                example: Tue, 19 Nov 2024 07:42:31 GMT
+            Referrer-Policy:
+              schema:
+                type: string
+                example: same-origin
+            Server:
+              schema:
+                type: string
+                example: WSGIServer/0.2 CPython/3.13.0
+            Vary:
+              schema:
+                type: string
+                example: Accept
+            X-Content-Type-Options:
+              schema:
+                type: string
+                example: nosniff
+            X-Frame-Options:
+              schema:
+                type: string
+                example: DENY
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: string
+                    example: 'true'
+              examples:
+                http://127.0.0.1:8000/api/users/register/:
+                  value:
+                    success: 'true'
+  /api/users/login:
+    post:
+      summary: Login user
+      description: >-
+        When user enters correct username and password we give access token which can be used to write, edit and delete reviews for books. Its validity is 5 minutes.
+      operationId: loginUser
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                password:
+                  type: string
+                  example: newpassword
+                username:
+                  type: string
+                  example: newuser3
+            examples:
+              Login user:
+                value:
+                  password: newpassword
+                  username: newuser3
+      responses:
+        '200':
+          description: Login user
+          headers:
+            Allow:
+              schema:
+                type: string
+                example: POST, OPTIONS
+            Content-Length:
+              schema:
+                type: string
+                example: '531'
+            Cross-Origin-Opener-Policy:
+              schema:
+                type: string
+                example: same-origin
+            Date:
+              schema:
+                type: string
+                example: Tue, 19 Nov 2024 11:41:30 GMT
+            Referrer-Policy:
+              schema:
+                type: string
+                example: same-origin
+            Server:
+              schema:
+                type: string
+                example: WSGIServer/0.2 CPython/3.13.0
+            Vary:
+              schema:
+                type: string
+                example: Accept
+            X-Content-Type-Options:
+              schema:
+                type: string
+                example: nosniff
+            X-Frame-Options:
+              schema:
+                type: string
+                example: DENY
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      access:
+                        type: string
+                        example: >-
+                          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMyMDE2NzkwLCJpYXQiOjE3MzIwMTY0OTAsImp0aSI6ImFjM2M4MjQxMTBkNjRlYjM5OGI2N2Q5Y2I0NDJjMWU2IiwidXNlcl9pZCI6M30.FpyALOpgBXqByCrX81nnfrJlJVgX9V3eB5hmaA5T4Ww
+                      refresh:
+                        type: string
+                        example: >-
+                          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTczMjEwMjg5MCwiaWF0IjoxNzMyMDE2NDkwLCJqdGkiOiJjMjc4NTg0YmE0YTE0OGI2YTU3MTQzYjQ0YTgwYTM2MSIsInVzZXJfaWQiOjN9.H8lJnPZr8eU1U0TB-iQw5HNowGXaIUnHMWnxPFYyi4U
+                      username:
+                        type: string
+                        example: newuser3
+                  success:
+                    type: string
+                    example: 'true'
+              examples:
+                Login user:
+                  value:
+                    data:
+                      access: >-
+                        eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMyMDE2NzkwLCJpYXQiOjE3MzIwMTY0OTAsImp0aSI6ImFjM2M4MjQxMTBkNjRlYjM5OGI2N2Q5Y2I0NDJjMWU2IiwidXNlcl9pZCI6M30.FpyALOpgBXqByCrX81nnfrJlJVgX9V3eB5hmaA5T4Ww
+                      refresh: >-
+                        eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTczMjEwMjg5MCwiaWF0IjoxNzMyMDE2NDkwLCJqdGkiOiJjMjc4NTg0YmE0YTE0OGI2YTU3MTQzYjQ0YTgwYTM2MSIsInVzZXJfaWQiOjN9.H8lJnPZr8eU1U0TB-iQw5HNowGXaIUnHMWnxPFYyi4U
+                      username: newuser3
+                    success: 'true'
+  /api/books/add:
+    post:
+      summary: Add book
+      description: >-
+        This api is used to add books. As only admin can add books we have made 'admin-key' header as mandatory and its value is 'key123'.
+      operationId: addBook
+      parameters:
+        - name: admin-key
+          in: header
+          schema:
+            type: string
+            example: key123
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ISBN:
+                  type: string
+                  example: '1234567890132'
+                author:
+                  type: string
+                  example: Author Name
+                cover_image_url:
+                  type: string
+                  example: http://example.com/image.jpg
+                genre:
+                  type: string
+                  example: fiction
+                title:
+                  type: string
+                  example: Book Title
+            examples:
+              Add book:
+                value:
+                  ISBN: '1234567890132'
+                  author: Author Name
+                  cover_image_url: http://example.com/image.jpg
+                  genre: fiction
+                  title: Book Title
+      responses:
+        '201':
+          description: Add book
+          headers:
+            Allow:
+              schema:
+                type: string
+                example: POST, OPTIONS
+            Content-Length:
+              schema:
+                type: string
+                example: '18'
+            Cross-Origin-Opener-Policy:
+              schema:
+                type: string
+                example: same-origin
+            Date:
+              schema:
+                type: string
+                example: Tue, 19 Nov 2024 11:19:08 GMT
+            Referrer-Policy:
+              schema:
+                type: string
+                example: same-origin
+            Server:
+              schema:
+                type: string
+                example: WSGIServer/0.2 CPython/3.13.0
+            Vary:
+              schema:
+                type: string
+                example: Accept
+            X-Content-Type-Options:
+              schema:
+                type: string
+                example: nosniff
+            X-Frame-Options:
+              schema:
+                type: string
+                example: DENY
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: string
+                    example: 'true'
+              examples:
+                Add book:
+                  value:
+                    success: 'true'
+  /api/books/update/<book_id>:
+    put:
+      summary: Update book
+      description: >-
+        This api is used to update books. As only admin can update books we have made 'admin-key' header as mandatory and its value is 'key123'.
+      operationId: updateBook
+      parameters:
+        - name: admin-key
+          in: header
+          schema:
+            type: string
+            example: key123
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ISBN:
+                  type: string
+                  example: '123456789'
+                author:
+                  type: string
+                  example: Updated Author
+                cover_image_url:
+                  type: string
+                  example: http://example.com/updated_image.jpg
+                genre:
+                  type: string
+                  example: Updated Genre
+                title:
+                  type: string
+                  example: Updated Title
+            examples:
+              Update book:
+                value:
+                  ISBN: '123456789'
+                  author: Updated Author
+                  cover_image_url: http://example.com/updated_image.jpg
+                  genre: Updated Genre
+                  title: Updated Title
+      responses:
+        '201':
+          description: Update book
+          headers:
+            Allow:
+              schema:
+                type: string
+                example: PUT, PATCH, OPTIONS
+            Content-Length:
+              schema:
+                type: string
+                example: '18'
+            Cross-Origin-Opener-Policy:
+              schema:
+                type: string
+                example: same-origin
+            Date:
+              schema:
+                type: string
+                example: Mon, 18 Nov 2024 21:18:39 GMT
+            Referrer-Policy:
+              schema:
+                type: string
+                example: same-origin
+            Server:
+              schema:
+                type: string
+                example: WSGIServer/0.2 CPython/3.13.0
+            Vary:
+              schema:
+                type: string
+                example: Accept
+            X-Content-Type-Options:
+              schema:
+                type: string
+                example: nosniff
+            X-Frame-Options:
+              schema:
+                type: string
+                example: DENY
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: string
+                    example: 'true'
+              examples:
+                Update book:
+                  value:
+                    success: 'true'
+  /api/books/search:
+    get:
+      summary: Search book
+      description: >-
+        It searches book by 'author' or 'title' or 'ISBN' query param. The books can be sorted by "sort_by" queryparam whose values can be 'title', 'author', 'average_rating', 'created_at'. 'page-no' and 'page-size' are for pagination and page starts from 1.
+      operationId: searchBook
+      parameters:
+        - name: author
+          in: query
+          schema:
+            type: string
+            example: Author Name
+        - name: ISBN
+          in: query
+          schema:
+            type: string
+            example: '1234567890127'
+        - name: sort_by
+          in: query
+          schema:
+            type: string
+            example: created_at
+        - name: genre
+          in: query
+          schema:
+            type: string
+            example: fiction
+        - name: title
+          in: query
+          schema:
+            type: string
+            example: ABook Title5
+        - name: page-no
+          in: header
+          schema:
+            type: string
+            example: '1'
+        - name: page-size
+          in: header
+          schema:
+            type: string
+            example: '3'
+      responses:
+        '200':
+          description: Search book by title / Search book by author
+          headers:
+            Allow:
+              schema:
+                type: string
+                example: GET, HEAD, OPTIONS
+            Content-Length:
+              schema:
+                type: string
+                example: '398'
+            Cross-Origin-Opener-Policy:
+              schema:
+                type: string
+                example: same-origin
+            Date:
+              schema:
+                type: string
+                example: Tue, 19 Nov 2024 12:09:06 GMT
+            Referrer-Policy:
+              schema:
+                type: string
+                example: same-origin
+            Server:
+              schema:
+                type: string
+                example: WSGIServer/0.2 CPython/3.13.0
+            Vary:
+              schema:
+                type: string
+                example: Accept
+            X-Content-Type-Options:
+              schema:
+                type: string
+                example: nosniff
+            X-Frame-Options:
+              schema:
+                type: string
+                example: DENY
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        ISBN:
+                          type: string
+                          example: '1234567890132'
+                        author:
+                          type: string
+                          example: Author Name
+                        average_rating:
+                          type: number
+                          example: 0
+                        book_id:
+                          type: number
+                          example: 6
+                        created_at:
+                          type: string
+                          example: '2024-11-19T11:19:08.617247Z'
+                        genre:
+                          type: string
+                          example: fiction
+                        title:
+                          type: string
+                          example: ABook Title5
+                    example:
+                      - ISBN: '1234567890132'
+                        author: Author Name
+                        average_rating: 0
+                        book_id: 6
+                        created_at: '2024-11-19T11:19:08.617247Z'
+                        genre: fiction
+                        title: ABook Title5
+                  page_no:
+                    type: number
+                    example: 1
+                  page_size:
+                    type: number
+                    example: 3
+                  success:
+                    type: string
+                    example: 'true'
+                  total_books:
+                    type: number
+                    example: 1
+              examples:
+                Search book by author:
+                  value:
+                    data:
+                      - ISBN: '1234567890132'
+                        author: Author Name
+                        average_rating: 0
+                        book_id: 6
+                        created_at: '2024-11-19T11:19:08.617247Z'
+                        genre: fiction
+                        title: ABook Title5
+                      - ISBN: '1234567890131'
+                        author: Author Name
+                        average_rating: 0
+                        book_id: 5
+                        created_at: '2024-11-19T10:46:04.977056Z'
+                        genre: fiction
+                        title: Book Title5
+                    page_no: 1
+                    page_size: 3
+                    success: 'true'
+                    total_books: 2
+                Search book by title:
+                  value:
+                    data:
+                      - ISBN: '1234567890132'
+                        author: Author Name
+                        average_rating: 0
+                        book_id: 6
+                        created_at: '2024-11-19T11:19:08.617247Z'
+                        genre: fiction
+                        title: ABook Title5
+                    page_no: 1
+                    page_size: 3
+                    success: 'true'
+                    total_books: 1
+  /api/books/delete/<book_id>:
+    delete:
+      summary: Delete book by Id
+      description: >-
+        This api is used to delete books. As only admin can delete books we have made 'admin-key' header as mandatory and its value is 'key123'.
+      operationId: deleteBookById
+      parameters:
+        - name: ''
+          in: query
+          schema:
+            type: string
+            example: ''
+        - name: admin-key
+          in: header
+          schema:
+            type: string
+            example: key123
+      responses:
+        '204':
+          description: Delete book by Id
+          headers:
+            Allow:
+              schema:
+                type: string
+                example: DELETE, OPTIONS
+            Content-Length:
+              schema:
+                type: string
+                example: '18'
+            Cross-Origin-Opener-Policy:
+              schema:
+                type: string
+                example: same-origin
+            Date:
+              schema:
+                type: string
+                example: Mon, 18 Nov 2024 21:19:15 GMT
+            Referrer-Policy:
+              schema:
+                type: string
+                example: same-origin
+            Server:
+              schema:
+                type: string
+                example: WSGIServer/0.2 CPython/3.13.0
+            Vary:
+              schema:
+                type: string
+                example: Accept
+            X-Content-Type-Options:
+              schema:
+                type: string
+                example: nosniff
+            X-Frame-Options:
+              schema:
+                type: string
+                example: DENY
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: string
+                    example: 'true'
+              examples:
+                Delete book by Id:
+                  value:
+                    success: 'true'
+  /api/reviews/add:
+    post:
+      summary: Add review
+      description: >-
+        This api is used to add reviews. The user writing the review can be identified by Authorization header which takes Bearer token from login API. Its validity is 5 minutes 
+      operationId: addReview
+      parameters:
+        - name: 'Authorization'
+          in: header
+          schema:
+            type: string
+            example: 'Bearer <access-token-from-login-api>'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                book:
+                  type: number
+                  example: 5
+                content:
+                  type: string
+                  example: Great book 2!
+                rating:
+                  type: number
+                  example: 4
+            examples:
+              Add review:
+                value:
+                  book: 5
+                  content: Great book 2!
+                  rating: 4
+      responses:
+        '201':
+          description: Add review
+          headers:
+            Allow:
+              schema:
+                type: string
+                example: POST, OPTIONS
+            Content-Length:
+              schema:
+                type: string
+                example: '140'
+            Cross-Origin-Opener-Policy:
+              schema:
+                type: string
+                example: same-origin
+            Date:
+              schema:
+                type: string
+                example: Tue, 19 Nov 2024 11:45:22 GMT
+            Referrer-Policy:
+              schema:
+                type: string
+                example: same-origin
+            Server:
+              schema:
+                type: string
+                example: WSGIServer/0.2 CPython/3.13.0
+            Vary:
+              schema:
+                type: string
+                example: Accept
+            X-Content-Type-Options:
+              schema:
+                type: string
+                example: nosniff
+            X-Frame-Options:
+              schema:
+                type: string
+                example: DENY
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      book:
+                        type: number
+                        example: 5
+                      content:
+                        type: string
+                        example: Great book 2!
+                      created_at:
+                        type: string
+                        example: '2024-11-19T11:45:22.283218Z'
+                      rating:
+                        type: number
+                        example: 4
+                      review_id:
+                        type: number
+                        example: 16
+                      user:
+                        type: number
+                        example: 3
+                  success:
+                    type: string
+                    example: 'true'
+              examples:
+                Add review:
+                  value:
+                    data:
+                      book: 5
+                      content: Great book 2!
+                      created_at: '2024-11-19T11:45:22.283218Z'
+                      rating: 4
+                      review_id: 16
+                      user: 3
+                    success: 'true'
+  /api/reviews/update/<review-id>:
+    put:
+      summary: Edit review
+      description: >-
+        This api is used to edit reviews. The user editing the review can be identified by Authorization header which takes Bearer token from login API. Its validity is 5 minutes
+      operationId: editReview
+      parameters:
+        - name: 'Authorization'
+          in: header
+          schema:
+            type: string
+            example: 'Bearer <access-token-from-login-api>'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                content:
+                  type: string
+                  example: Updated review content
+                rating:
+                  type: number
+                  example: 2
+            examples:
+              Edit review:
+                value:
+                  content: Updated review content
+                  rating: 2
+      responses:
+        '200':
+          description: Edit review
+          headers:
+            Allow:
+              schema:
+                type: string
+                example: PUT, PATCH, OPTIONS
+            Content-Length:
+              schema:
+                type: string
+                example: '149'
+            Cross-Origin-Opener-Policy:
+              schema:
+                type: string
+                example: same-origin
+            Date:
+              schema:
+                type: string
+                example: Tue, 19 Nov 2024 11:45:56 GMT
+            Referrer-Policy:
+              schema:
+                type: string
+                example: same-origin
+            Server:
+              schema:
+                type: string
+                example: WSGIServer/0.2 CPython/3.13.0
+            Vary:
+              schema:
+                type: string
+                example: Accept
+            X-Content-Type-Options:
+              schema:
+                type: string
+                example: nosniff
+            X-Frame-Options:
+              schema:
+                type: string
+                example: DENY
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      book:
+                        type: number
+                        example: 5
+                      content:
+                        type: string
+                        example: Updated review content
+                      created_at:
+                        type: string
+                        example: '2024-11-19T11:45:22.283218Z'
+                      rating:
+                        type: number
+                        example: 2
+                      review_id:
+                        type: number
+                        example: 16
+                      user:
+                        type: number
+                        example: 3
+                  success:
+                    type: string
+                    example: 'true'
+              examples:
+                Edit review:
+                  value:
+                    data:
+                      book: 5
+                      content: Updated review content
+                      created_at: '2024-11-19T11:45:22.283218Z'
+                      rating: 2
+                      review_id: 16
+                      user: 3
+                    success: 'true'
+  /api/reviews/delete/<review_id>:
+    delete:
+      summary: Delete review
+      description: >-
+        This api is used to delete reviews. The user deleting the review can be identified by Authorization header which takes Bearer token from login API. Its validity is 5 minutes
+      operationId: deleteReview
+      parameters:
+        - name: 'Authorization'
+          in: header
+          schema:
+            type: string
+            example: 'Bearer <access-token-from-login-api>'
+      responses:
+        '204':
+          description: Delete review
+          headers:
+            Allow:
+              schema:
+                type: string
+                example: DELETE, OPTIONS
+            Content-Length:
+              schema:
+                type: string
+                example: '18'
+            Cross-Origin-Opener-Policy:
+              schema:
+                type: string
+                example: same-origin
+            Date:
+              schema:
+                type: string
+                example: Tue, 19 Nov 2024 11:46:10 GMT
+            Referrer-Policy:
+              schema:
+                type: string
+                example: same-origin
+            Server:
+              schema:
+                type: string
+                example: WSGIServer/0.2 CPython/3.13.0
+            Vary:
+              schema:
+                type: string
+                example: Accept
+            X-Content-Type-Options:
+              schema:
+                type: string
+                example: nosniff
+            X-Frame-Options:
+              schema:
+                type: string
+                example: DENY
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: string
+                    example: 'true'
+              examples:
+                Delete review:
+                  value:
+                    success: 'true'
+  /api/reviews/average-rating/<book_id>:
+    get:
+      summary: Average rating of book
+      description: >-
+        This api is used to get average rating of a book by book_id.
+      operationId: averageRatingOfBook
+      responses:
+        '200':
+          description: Average rating of book
+          headers:
+            Allow:
+              schema:
+                type: string
+                example: GET, HEAD, OPTIONS
+            Content-Length:
+              schema:
+                type: string
+                example: '48'
+            Cross-Origin-Opener-Policy:
+              schema:
+                type: string
+                example: same-origin
+            Date:
+              schema:
+                type: string
+                example: Tue, 19 Nov 2024 07:48:22 GMT
+            Referrer-Policy:
+              schema:
+                type: string
+                example: same-origin
+            Server:
+              schema:
+                type: string
+                example: WSGIServer/0.2 CPython/3.13.0
+            Vary:
+              schema:
+                type: string
+                example: Accept
+            X-Content-Type-Options:
+              schema:
+                type: string
+                example: nosniff
+            X-Frame-Options:
+              schema:
+                type: string
+                example: DENY
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      average_rating:
+                        type: number
+                        example: 3.5
+                  success:
+                    type: string
+                    example: 'true'
+              examples:
+                Average rating of book:
+                  value:
+                    data:
+                      average_rating: 3.5
+                    success: 'true'
+  /api/reviews/user-review/<book_id>:
+    get:
+      summary: Get user review of a specific book
+      description: |-
+        This api is used to get specific user's review of a book
+      operationId: getUserReviewOfASpecificBook
+      parameters:
+        - name: 'Authorization'
+          in: header
+          schema:
+            type: string
+            example: 'Bearer <access-token-from-login-api>'
+      responses:
+        '200':
+          description: Get user review of a specific book
+          headers:
+            Allow:
+              schema:
+                type: string
+                example: GET, HEAD, OPTIONS
+            Content-Length:
+              schema:
+                type: string
+                example: '148'
+            Cross-Origin-Opener-Policy:
+              schema:
+                type: string
+                example: same-origin
+            Date:
+              schema:
+                type: string
+                example: Tue, 19 Nov 2024 07:39:08 GMT
+            Referrer-Policy:
+              schema:
+                type: string
+                example: same-origin
+            Server:
+              schema:
+                type: string
+                example: WSGIServer/0.2 CPython/3.13.0
+            Vary:
+              schema:
+                type: string
+                example: Accept
+            X-Content-Type-Options:
+              schema:
+                type: string
+                example: nosniff
+            X-Frame-Options:
+              schema:
+                type: string
+                example: DENY
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      book:
+                        type: number
+                        example: 2
+                      content:
+                        type: string
+                        example: Updated review content
+                      created_at:
+                        type: string
+                        example: '2024-11-19T07:18:03.551072Z'
+                      rating:
+                        type: number
+                        example: 2
+                      review_id:
+                        type: number
+                        example: 2
+                      user:
+                        type: number
+                        example: 1
+                  success:
+                    type: string
+                    example: 'true'
+              examples:
+                Get user review of a specific book:
+                  value:
+                    data:
+                      book: 2
+                      content: Updated review content
+                      created_at: '2024-11-19T07:18:03.551072Z'
+                      rating: 2
+                      review_id: 2
+                      user: 1
+                    success: 'true'
+  /api/reviews/book-reviews<book_id>:
+    get:
+      summary: Get paginated book reviews
+      description: >-
+        This api is used to get paginated reviews of a book
+      operationId: getPaginatedBookReviews
+      parameters:
+        - name: page-no
+          in: header
+          schema:
+            type: string
+            example: '2'
+        - name: page-size
+          in: header
+          schema:
+            type: string
+            example: '1'
+      responses:
+        '200':
+          description: Get paginated book reviews
+          headers:
+            Allow:
+              schema:
+                type: string
+                example: GET, HEAD, OPTIONS
+            Content-Length:
+              schema:
+                type: string
+                example: '189'
+            Cross-Origin-Opener-Policy:
+              schema:
+                type: string
+                example: same-origin
+            Date:
+              schema:
+                type: string
+                example: Tue, 19 Nov 2024 10:41:02 GMT
+            Referrer-Policy:
+              schema:
+                type: string
+                example: same-origin
+            Server:
+              schema:
+                type: string
+                example: WSGIServer/0.2 CPython/3.13.0
+            Vary:
+              schema:
+                type: string
+                example: Accept
+            X-Content-Type-Options:
+              schema:
+                type: string
+                example: nosniff
+            X-Frame-Options:
+              schema:
+                type: string
+                example: DENY
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        book_id:
+                          type: number
+                          example: 1
+                        content:
+                          type: string
+                          example: Great book!
+                        created_at:
+                          type: string
+                          example: '2024-11-19T07:17:51.146674Z'
+                        rating:
+                          type: number
+                          example: 3
+                        review_id:
+                          type: number
+                          example: 1
+                        user_id:
+                          type: number
+                          example: 1
+                    example:
+                      - book_id: 1
+                        content: Great book!
+                        created_at: '2024-11-19T07:17:51.146674Z'
+                        rating: 3
+                        review_id: 1
+                        user_id: 1
+                  page_no:
+                    type: number
+                    example: 2
+                  page_size:
+                    type: number
+                    example: 1
+                  success:
+                    type: string
+                    example: 'true'
+                  total_reviews:
+                    type: number
+                    example: 2
+              examples:
+                Get paginated book reviews:
+                  value:
+                    data:
+                      - book_id: 1
+                        content: Great book!
+                        created_at: '2024-11-19T07:17:51.146674Z'
+                        rating: 3
+                        review_id: 1
+                        user_id: 1
+                    page_no: 2
+                    page_size: 1
+                    success: 'true'
+                    total_reviews: 2
+  /api/books/recommendations:
+    get:
+      summary: Get top recommendations of books (Paginated)
+      description: This api is used to get top recommendations of books (Paginated). These recommendations are based on the ratings given to the books by user. Highest rated books will be at the top.
+      operationId: getTopRecommendationsOfBooksPaginated
+      parameters:
+        - name: page-no
+          in: header
+          schema:
+            type: string
+            example: '1'
+        - name: page-size
+          in: header
+          schema:
+            type: string
+            example: '5'
+      responses:
+        '200':
+          description: Get top recommendations of books
+          headers:
+            Allow:
+              schema:
+                type: string
+                example: GET, HEAD, OPTIONS
+            Content-Length:
+              schema:
+                type: string
+                example: '881'
+            Cross-Origin-Opener-Policy:
+              schema:
+                type: string
+                example: same-origin
+            Date:
+              schema:
+                type: string
+                example: Tue, 19 Nov 2024 11:33:59 GMT
+            Referrer-Policy:
+              schema:
+                type: string
+                example: same-origin
+            Server:
+              schema:
+                type: string
+                example: WSGIServer/0.2 CPython/3.13.0
+            Vary:
+              schema:
+                type: string
+                example: Accept
+            X-Content-Type-Options:
+              schema:
+                type: string
+                example: nosniff
+            X-Frame-Options:
+              schema:
+                type: string
+                example: DENY
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        ISBN:
+                          type: string
+                          example: '1234567890129'
+                        author:
+                          type: string
+                          example: Author Name
+                        average_rating:
+                          type: number
+                          example: 4
+                        book_id:
+                          type: number
+                          example: 3
+                        created_at:
+                          type: string
+                          example: '2024-11-19T09:45:40.710484Z'
+                        genre:
+                          type: string
+                          example: Genre
+                        title:
+                          type: string
+                          example: Book Title3
+                    example:
+                      - ISBN: '1234567890129'
+                        author: Author Name
+                        average_rating: 4
+                        book_id: 3
+                        created_at: '2024-11-19T09:45:40.710484Z'
+                        genre: Genre
+                        title: Book Title3
+                      - ISBN: '1234567890127'
+                        author: Author Name
+                        average_rating: 3.5
+                        book_id: 1
+                        created_at: '2024-11-19T09:45:40.710484Z'
+                        genre: Genre
+                        title: Book Title
+                      - ISBN: '1234567890130'
+                        author: Author Name
+                        average_rating: 2
+                        book_id: 4
+                        created_at: '2024-11-19T09:45:40.710484Z'
+                        genre: Genre
+                        title: Book Title4
+                      - ISBN: '1234567890128'
+                        author: Author Name
+                        average_rating: 2
+                        book_id: 2
+                        created_at: '2024-11-19T09:45:40.710484Z'
+                        genre: Genre
+                        title: Book Title2
+                      - ISBN: '1234567890132'
+                        author: Author Name
+                        average_rating: 0
+                        book_id: 6
+                        created_at: '2024-11-19T11:19:08.617247Z'
+                        genre: fiction
+                        title: ABook Title5
+                  page_no:
+                    type: number
+                    example: 1
+                  page_size:
+                    type: number
+                    example: 5
+                  success:
+                    type: string
+                    example: 'true'
+                  total_books:
+                    type: number
+                    example: 6
+              examples:
+                Get top recommendations of books:
+                  value:
+                    data:
+                      - ISBN: '1234567890129'
+                        author: Author Name
+                        average_rating: 4
+                        book_id: 3
+                        created_at: '2024-11-19T09:45:40.710484Z'
+                        genre: Genre
+                        title: Book Title3
+                      - ISBN: '1234567890127'
+                        author: Author Name
+                        average_rating: 3.5
+                        book_id: 1
+                        created_at: '2024-11-19T09:45:40.710484Z'
+                        genre: Genre
+                        title: Book Title
+                      - ISBN: '1234567890130'
+                        author: Author Name
+                        average_rating: 2
+                        book_id: 4
+                        created_at: '2024-11-19T09:45:40.710484Z'
+                        genre: Genre
+                        title: Book Title4
+                      - ISBN: '1234567890128'
+                        author: Author Name
+                        average_rating: 2
+                        book_id: 2
+                        created_at: '2024-11-19T09:45:40.710484Z'
+                        genre: Genre
+                        title: Book Title2
+                      - ISBN: '1234567890132'
+                        author: Author Name
+                        average_rating: 0
+                        book_id: 6
+                        created_at: '2024-11-19T11:19:08.617247Z'
+                        genre: fiction
+                        title: ABook Title5
+                    page_no: 1
+                    page_size: 5
+                    success: 'true'
+                    total_books: 6
+tags: []
